@@ -1,0 +1,17 @@
+@import 'styles/variables.css';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.entry {
+  float: left;
+  width: 140px;
+  margin-left: 15px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

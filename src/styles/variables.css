@@ -1,4 +1,14 @@
 :root {
+  /* Spacing */
+  --smaller-spacing : .5rem;
+  --small-spacing   : .75rem;
+  --base-spacing    : 1rem;
+  --medium-spacing  : 1.5rem;
+  --large-spacing   : 2rem;
+  --larger-spacing  : 3rem;
+
+
+  /* Font weight */
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "do-to",
+  "name": "movie-it",
   "version": "1.0.0",
-  "main": "lib/index.js",
+  "main": "src/main.js",
   "author": {
     "name": "Kaio Max"
   },
@@ -14,9 +14,11 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
+    "start host": "webpack-dev-server --port 8080 --hot --host 0.0.0.0",
     "test": "jest"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "lodash": "^4.17.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

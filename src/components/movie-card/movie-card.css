@@ -1,0 +1,17 @@
+@import 'styles/variables.css';
+
+.wrapper {
+  width: 100%;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+}
+
+.posterImg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

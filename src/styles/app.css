@@ -1,10 +1,19 @@
 @import 'normalize.css';
 
 html {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
   font-family: 'Muli', sans-serif;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
+  width: 100%;
+  overflow: hidden;
   color: white;
   background: #222;
 }
+

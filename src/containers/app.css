@@ -1,0 +1,11 @@
+@import 'styles/variables.css';
+
+.container {
+  display: block;
+  max-width: 520px;
+  margin: 0 auto;
+
+  @media (width < 600px) {
+    margin: 0 var(--base-spacing);
+  }
+}
