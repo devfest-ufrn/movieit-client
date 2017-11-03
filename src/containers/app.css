@@ -1,0 +1,14 @@
+@import 'styles/variables.css';
+
+.myClass {
+  text-align: center;
+
+  & h1 {
+    color: var(--color-black);
+  }
+
+  @media (width > 600px) {
+    max-width: 30em;
+    margin: 0 auto;
+  }
+}
