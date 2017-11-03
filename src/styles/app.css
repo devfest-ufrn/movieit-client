@@ -1,1 +1,10 @@
-@import 'variables.css';
+@import 'normalize.css';
+
+html {
+  font-family: 'Muli', sans-serif;
+}
+
+body {
+  color: white;
+  background: #222;
+}
