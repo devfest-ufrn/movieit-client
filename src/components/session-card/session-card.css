@@ -1,0 +1,97 @@
+@import 'styles/variables.css';
+
+.wrapper {
+  position: relative;
+  margin-bottom: var(--base-spacing);
+  background-color: #111;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  z-index: var(--base-z-index);
+  float: left;
+  height: 60px;
+  padding: 10px;
+}
+
+.movieTitle {
+  float: left;
+  display: inline-block;
+  max-width: 150px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  font-size: 14px;
+  text-shadow: 0.5px 0.5px 1px #4c4c4c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.movieTheater {
+  clear: both;
+  margin: 0;
+  font-size: 12px;
+}
+
+.tags {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: var(--base-z-index);
+
+  & li {
+    display: inline-block;
+    padding: 2px 2px;
+    margin-right: 4px;
+    text-transform: uppercase;
+    font-size: 10px;
+    background-color: #294B00;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.time {
+  position: relative;
+  z-index: var(--base-z-index);
+  float: left;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  background-color: #2D2D2D;
+
+  & span {
+    display: block;
+
+    &:first-child {
+      margin-top: 10px;
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
+
+    &:last-child {
+      font-size: 16px;
+    }
+  }
+}
+
+.posterImage {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  z-index: var(--bottom-z-index);
+  width: 100%;
+  height: 60px;
+  background-position: center center;
+  background-size: cover;
+  filter: blur(5px) opacity(50%) contrast(150%);
+}

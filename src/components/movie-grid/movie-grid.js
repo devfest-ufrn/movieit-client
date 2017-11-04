@@ -18,13 +18,13 @@ export default class MovieGrid extends React.Component {
 
     return (
       <div
-        ref={ el => this.wrapper = el }
         className={ styles.wrapper }
       >
         <div style={ { width: `${ listWidth }px` } }>
-          { movies.map((movie) => {
+          { movies.map((movie, i) => {
             return (
               <MovieCard
+                key={ i }
                 className={ styles.entry }
                 title={ movie.title }
                 posterImg={ movie.posterImg }

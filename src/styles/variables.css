@@ -9,6 +9,11 @@
 
 
   /* Font weight */
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
+  --font-weight-regular : 400;
+  --font-weight-bold    : 700;
+
+  /* Z-index */
+  --bottom-z-index : 10;
+  --base-z-index   : 20;
+  --top-z-index    : 30;
 }

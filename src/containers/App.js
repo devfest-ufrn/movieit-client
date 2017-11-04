@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import MovieGrid from 'components/movie-grid';
+import SessionList from 'components/session-list';
 
 import 'styles/app.css';
 
@@ -16,6 +17,10 @@ export default class App extends Component {
         <div>
           <h2>Filmes em exibição</h2>
           <MovieGrid />
+        </div>
+        <div>
+          <h2>Próximas sessões</h2>
+          <SessionList />
         </div>
       </div>
     );
