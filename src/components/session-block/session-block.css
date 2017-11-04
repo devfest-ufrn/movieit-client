@@ -1,0 +1,21 @@
+@import 'styles/variables.css';
+
+.wrapper {
+  padding: 4px 0;
+  text-align: center;
+  background-color: #2D2D2D;
+}
+
+.time {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: var(--font-weight-bold);
+}
+
+.tags {
+  font-size: 12px;
+
+  @media (width < 420px) {
+    font-size: 10px;
+  }
+}
