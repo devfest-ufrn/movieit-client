@@ -9,7 +9,10 @@ export default [
     director: 'Taika Waititi',
     duration: '136',
     contentRating: '12 anos',
-    genres: ['Ação', 'Aventura']
+    genres: ['Ação', 'Aventura'],
+    ratings: [
+      { name: 'IMDb', value: 8.2, type: 'base_10' }
+    ]
   },
   {
     id: 2,
@@ -21,7 +24,10 @@ export default [
     director: 'Jeremy Degruson, Ben Stassen',
     duration: '91',
     contentRating: 'Livre',
-    genres: ['Animação', 'Comédia']
+    genres: ['Animação', 'Comédia'],
+    ratings: [
+      { name: 'IMDb', value: 6.0, type: 'base_10' }
+    ]
   },
   {
     id: 3,
@@ -33,7 +39,10 @@ export default [
     director: 'Dean Devlin',
     duration: '109',
     contentRating: '12 anos',
-    genres: ['Ação']
+    genres: ['Ação'],
+    ratings: [
+      { name: 'IMDb', value: 5.7, type: 'base_10' }
+    ]
   },
   {
     id: 4,
@@ -45,18 +54,24 @@ export default [
     director: 'Svyatoslav Podgayevskiy',
     duration: '95',
     contentRating: '16 anos',
-    genres: ['Terror']
+    genres: ['Terror'],
+    ratings: [
+      { name: 'IMDb', value: 4.8, type: 'base_10' }
+    ]
   },
   {
     id: 5,
-    title: 'Historietas assombradas - O filme',
-    posterPortrait: 'https://ingresso-a.akamaihd.net/img/cinema/cartaz/19990-cartaz.jpg',
-    posterHorizontal: 'https://ingresso-a.akamaihd.net/img/cinema/cartaz/19990-destaque.jpg',
-    synopsis: 'Numa noite muito escura, um estranho casal carrega uma criança, fugindo de outros seres estranhos. Pepe, o pequeno filho deles, é a possibilidade de salvação para uma espécie em extinção. Com muita tristeza, os pais deixam o menino na porta de Vó, uma feiticeira que fabrica artigos mágicos para vender pela internet. Pepe cresce fazendo muita confusão e se sentindo o máximo. Aos 11 anos, ele descobre que foi adotado e resolve procurar seus pais. Acompanhado de seus dois melhores amigos, Marilu e Gastón, embarca em uma grande aventura. Versão para o cinema da série de mesmo nome.',
-    cast: 'Charles Emmanuel, Nadia Carvalho, Iara Riça.',
-    director: 'Victor-Hugo Borges',
-    duration: '90',
-    contentRating: 'Livre',
-    genres: ['Animação']
+    title: 'Depois daquela montanha',
+    posterPortrait: 'https://ingresso-a.akamaihd.net/img/cinema/cartaz/20052-cartaz.jpg',
+    posterHorizontal: 'https://ingresso-a.akamaihd.net/img/cinema/cartaz/20052-destaque.jpg',
+    synopsis: 'Perdidos após um trágico acidente de avião, dois estranhos precisam forjar uma conexão para sobreviver aos elementos extremos de uma remota montanha coberta de neve. Quando percebem que a ajuda não está vindo, eles embarcam em uma terrível viagem através de centenas de quilômetros de deserto, empurrando um ao outro para suportar essas condições, e uma atração inesperada surge entre eles. O filme é dirigido pelo indicado ao Oscar Hany Abu-Asad e estrelado por Kate Winslet (vencedora do Oscar) e Idris Elba.',
+    cast: 'Kate Winslet, Idris Elba, Beau Bridges, Dermot Mulroney',
+    director: 'Hany Abu-Assad',
+    duration: '103',
+    contentRating: '14 anos',
+    genres: ['Ação', 'Aventura'],
+    ratings: [
+      { name: 'IMDb', value: 7.7, type: 'base_10' }
+    ]
   }
 ];

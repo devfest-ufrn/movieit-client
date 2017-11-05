@@ -8,7 +8,8 @@ export default function MovieCard({
   className,
   id,
   title,
-  posterImg
+  posterImg,
+  rating
 }) {
   return (
     <article className={ cx(styles.wrapper, className) }>
@@ -18,6 +19,7 @@ export default function MovieCard({
           src={ posterImg }
           alt={ `Pôster do filme ${ title }` }
         />
+        <span className={ styles.rating }>{ rating }</span>
         <header className={ styles.header }>
           <h3 className={ styles.title }>{ title }</h3>
         </header>
