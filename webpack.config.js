@@ -1,14 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-const buildDirectory = './dist/';
+const buildDirectory = './static/';
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    'react-hot-loader/patch',
     './src/main.js'
   ],
   devServer: {
@@ -52,7 +50,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new WebpackNotifierPlugin()
+    new UglifyJSPlugin({
+      test: /\.js($|\?)/i
+    })
   ]
 };
