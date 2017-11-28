@@ -18,7 +18,7 @@ export default class Home extends Component {
         </div>
         <div>
           <h2>Próximas sessões</h2>
-          <SessionList />
+          <SessionList data={ this.props.nextSessions } />
         </div>
       </div>
     );

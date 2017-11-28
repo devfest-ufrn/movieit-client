@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -54,6 +55,11 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new WebpackNotifierPlugin()
+    new WebpackNotifierPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'INGRESSO_PARTNERSHIP': JSON.stringify(process.env.INGRESSO_PARTNERSHIP)
+      }
+    })
   ]
 };
