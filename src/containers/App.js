@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import Home from 'components/pages/home';
+import Home from 'containers/pages/home';
 import Movie from 'components/pages/movie';
+
+import { actions as appActions } from 'ducks/app';
 
 import 'styles/app.css';
 
 import styles from './app.css';
 
-export default class App extends Component {
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    load: appActions.load
+  }, dispatch);
+}
+
+class App extends Component {
+  componentDidMount() {
+    this.props.load();
+  }
+
   render() {
     return (
       <main className={ styles.container }>
@@ -20,3 +34,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(undefined, mapDispatchToProps)(App);

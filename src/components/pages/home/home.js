@@ -14,7 +14,7 @@ export default class Home extends Component {
         </header>
         <div>
           <h2>Filmes em exibição</h2>
-          <MovieGrid />
+          <MovieGrid data={ this.props.movies } />
         </div>
         <div>
           <h2>Próximas sessões</h2>
