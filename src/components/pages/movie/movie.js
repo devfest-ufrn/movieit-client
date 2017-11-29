@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import MovieSessions from 'components/movie-sessions';
+
+import leftArrow from './left-arrow.svg';
 
 import styles from './movie.css';
 
@@ -11,6 +14,9 @@ export default class Movie extends Component {
     return (
       <article className={ styles.wrapper }>
         <header className={ styles.header }>
+          <Link to="/">
+            <img className={ styles.arrowBack } src={ leftArrow } alt="imagem seta para voltar" />
+          </Link>
           <img
             className={ styles.banner }
             src={ movieData.posterHorizontal }

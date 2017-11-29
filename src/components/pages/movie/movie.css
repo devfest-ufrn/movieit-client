@@ -96,3 +96,11 @@
     font-weight: var(--font-weight-bold);
   }
 }
+
+.arrowBack {
+  position: absolute;
+  top: var(--base-spacing);
+  left: var(--base-spacing);
+  width: 28px;
+  z-index: var(--base-z-index);
+}
