@@ -5,6 +5,7 @@ import { applyMiddleware, createStore, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import * as reducers from './ducks';
+import { actions as appActions } from 'ducks/app';
 import rootSaga from './sagas';
 
 import Root from 'containers/Root';
@@ -47,3 +48,5 @@ if(module.hot) {
     );
   });
 }
+
+store.dispatch(appActions.load());
