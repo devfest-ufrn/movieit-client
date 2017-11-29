@@ -7,7 +7,7 @@ import styles from './movie-sessions.css';
 export default function MovieSessions({ data }) {
   return (
     <div className={ styles.wrapper }>
-      <h2 className={ styles.date }>Hoje</h2>
+      <h2 className={ styles.date }>Próximas sessões</h2>
       { data.map((item, i) => {
         return (
           <div key={ i }>

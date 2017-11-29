@@ -13,7 +13,9 @@ export default [
     contentRating: '12 anos',
     genres: ['Ação', 'Aventura'],
     ratings: [
-      { name: 'IMDb', value: 7.3, type: 'base_10' }
+      { name: 'IMDb', value: 7.3, type: 'base_10' },
+      { name: 'Metascore', value: 46, type: 'base_100' },
+      { name: 'Filmow', value: 3.7, type: 'base_5' }
     ]
   }, {
     id: 2,
@@ -29,7 +31,9 @@ export default [
     contentRating: '12 anos',
     genres: ['Ação', 'Aventura'],
     ratings: [
-      { name: 'IMDb', value: 8.2, type: 'base_10' }
+      { name: 'IMDb', value: 8.2, type: 'base_10' },
+      { name: 'Metascore', value: 73, type: 'base_100' },
+      { name: 'Filmow', value: 3.8, type: 'base_5' }
     ]
   }
 ];

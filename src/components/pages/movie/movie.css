@@ -104,3 +104,40 @@
   width: 28px;
   z-index: var(--base-z-index);
 }
+
+.ratings {
+  position: relative;
+  z-index: var(--base-z-index);
+  margin: 0;
+  padding: 0 var(--base-spacing);
+  list-style: none;
+}
+
+.ratingItem {
+  display: inline-block;
+  margin-right: var(--large-spacing);
+}
+
+.ratingImage,
+.ratingValue {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratingImage {
+  max-width: 40px;
+}
+
+.ratingValue {
+  display: inline-block;
+  margin-left: var(--base-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.metacriticImage {
+  max-width: 24px;
+}
+
+.filmowImage {
+  max-width: 60px;
+}
