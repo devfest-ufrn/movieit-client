@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from 'containers/pages/home';
-import Movie from 'components/pages/movie';
+import Movie from 'containers/pages/movie';
 
 import 'styles/app.css';
 

@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 
 import MovieSessions from 'components/movie-sessions';
-
-import MOVIES from 'data/sample-movies';
 
 import styles from './movie.css';
 
 export default class Movie extends Component {
   render() {
-    const movieData = _.find(MOVIES, { id: Number(this.props.match.params.id) });
+    const { movie: movieData } = this.props;
 
     return (
       <article className={ styles.wrapper }>
@@ -33,7 +30,7 @@ export default class Movie extends Component {
           <p><b>Diretor</b>{ movieData.director }</p>
           <p><b>Elenco principal</b>{ movieData.cast }</p>
         </div>
-        <MovieSessions />
+        <MovieSessions data={ this.props.theatersSessions } />
         <div
           style={ { backgroundImage: `url(${ movieData.posterHorizontal })` } }
           className={ styles.bgOverlay }
