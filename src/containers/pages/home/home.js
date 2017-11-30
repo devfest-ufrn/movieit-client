@@ -17,6 +17,7 @@ function parseNextSessions(movies, sessions) {
         _.each(room.sessions, (session) => {
           const sessionObj = {
             time: session.time,
+            siteURL: session.siteURL,
             movieId: movie.ingressoId,
             movieName: movie.title,
             theater: theater.name,

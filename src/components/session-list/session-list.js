@@ -12,6 +12,7 @@ export default function SessionList({ data }) {
         posterImage={ session.posterImage }
         tags={ session.type }
         time={ session.time }
+        siteURL={ session.siteURL }
       />
     );
   });

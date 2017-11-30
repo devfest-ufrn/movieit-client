@@ -3,8 +3,13 @@
 .wrapper {
   position: relative;
   margin-bottom: var(--base-spacing);
+  color: white;
   background-color: #111;
   overflow: hidden;
+}
+
+.linkWrapper {
+  color: white;
 }
 
 .header {

@@ -17,6 +17,7 @@ export default function MovieSessions({ data }) {
                 return (
                   <SessionBlock
                     key={ i }
+                    siteURL={ session.siteURL }
                     time={ session.time }
                     tags={ session.type }
                   />

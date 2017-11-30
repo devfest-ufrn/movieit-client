@@ -20,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  & div {
+  & a {
     width: 32%;
     margin: 1%;
 
