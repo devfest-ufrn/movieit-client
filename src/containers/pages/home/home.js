@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
+import moment from 'moment';
 
 import { actions as activeDayActions } from 'ducks/active-day';
 import { actions as activeSessionActions } from 'ducks/active-session';
@@ -40,7 +41,14 @@ function parseNextSessions(activeDay, movies, sessions) {
     });
   });
 
+  const currentDay = moment().format('YYYY-MM-DD');
+  const currentTime = moment().format('HH:mm');
+
   return _(nextSessions)
+    .filter((session) => {
+      if(currentDay !== activeDay) { return true; }
+      return session.time > currentTime;
+    })
     .sortBy('time')
     .take(10)
     .value();

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
+import moment from 'moment';
 
 import { actions as activeDayActions } from 'ducks/active-day';
 import { actions as activeSessionActions } from 'ducks/active-session';
@@ -14,12 +15,18 @@ function parseTheatersSessions(activeDay, movie, sessions) {
   if(!movieSessions) { return []; }
 
   let theatersSessions = [];
+  const currentTime = moment().format('HH:mm');
+  const currentDay = moment().format('YYYY-MM-DD');
 
   _.each(movieSessions.theaters, (theater) => {
     let theaterSessions = [];
 
     _.each(theater.rooms, (room) => {
       _.each(room.sessions, (session) => {
+        if(currentDay === activeDay && session.time < currentTime) {
+          return;
+        }
+
         const sessionObj = {
           time: session.time,
           siteURL: session.siteURL,
@@ -36,7 +43,7 @@ function parseTheatersSessions(activeDay, movie, sessions) {
 
     theatersSessions.push({
       theater: theater.name,
-      sessions: theaterSessions
+      sessions: _.sortBy(theaterSessions, 'time')
     });
   });
 
