@@ -1,0 +1,42 @@
+@import 'styles/variables.css';
+
+.wrapper {
+  position: relative;
+  z-index: var(--base-z-index);
+  margin: 0;
+  padding: 0 var(--base-spacing);
+  list-style: none;
+}
+
+.item {
+  display: inline-block;
+  margin-right: var(--large-spacing);
+
+  @media (width < 420px) {
+    margin-right: var(--base-spacing);
+  }
+}
+
+.image,
+.value {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.image {
+  max-width: 40px;
+}
+
+.value {
+  display: inline-block;
+  margin-left: var(--base-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.metacriticImage {
+  max-width: 24px;
+}
+
+.filmowImage {
+  max-width: 60px;
+}

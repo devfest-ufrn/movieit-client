@@ -4,6 +4,7 @@ import cx from 'classnames';
 import _ from 'lodash';
 
 import MovieSessions from 'components/movie-sessions';
+import Ratings from 'components/ratings';
 
 import leftArrow from './left-arrow.svg';
 
@@ -16,12 +17,6 @@ export default function Movie({
   movie: movieData,
   theatersSessions
 }) {
-  const { ratings } = movieData;
-  const findRating = (key) => {
-    const rating = _.find(ratings, { name: key });
-    return rating ? rating.value : null;
-  };
-
   return (
     <article className={ styles.wrapper }>
       <header className={ styles.header }>
@@ -42,20 +37,7 @@ export default function Movie({
           </p>
         </div>
       </header>
-      <ul className={ styles.ratings }>
-        <li className={ styles.ratingItem }>
-          <img className={ styles.ratingImage } src="https://png.icons8.com/imdb/color/50/000000" />
-          <span className={ styles.ratingValue }>{ findRating('IMDb') }</span>
-        </li>
-        <li className={ styles.ratingItem }>
-          <img className={ cx(styles.ratingImage, styles.metacriticImage) } src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Metacritic.svg/500px-Metacritic.svg.png" />
-          <span className={ styles.ratingValue }>{ findRating('Metascore') }</span>
-        </li>
-        <li className={ styles.ratingItem }>
-          <img className={ cx(styles.ratingImage, styles.filmowImage) } src="https://ui.fstatic.com/static/images/header-filmow-logo.png" />
-          <span className={ styles.ratingValue }>{ findRating('Filmow') }</span>
-        </li>
-      </ul>
+      <Ratings ratings={ movieData.ratings } />
       <div className={ styles.about }>
         <p>{ movieData.synopsis }</p>
         <p><b>Diretor</b>{ movieData.director }</p>
