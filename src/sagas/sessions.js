@@ -21,12 +21,17 @@ function* loadSessions() {
   const movies = yield select(state => state.movies);
   const moviesIds = _.map(movies, movie => movie.ingressoId);
 
-  const moviesRequests = _.map(moviesIds, (movieId) => {
+  const sessionsRequests = _.map(moviesIds, (movieId) => {
     return call(request, generateURL(movieId));
   });
-  const moviesSessionsResult = yield moviesRequests; 
+  const moviesSessionsResult = yield sessionsRequests; 
 
-  yield put(sessionsActions.set(moviesSessionsResult));
+  let mapSessionsToMovieId = {};
+  _.each(moviesIds, (moviesId, index) => {
+    mapSessionsToMovieId[moviesId] = moviesSessionsResult[index];
+  })
+
+  yield put(sessionsActions.set(mapSessionsToMovieId));
 }
 
 export default function* watch() {

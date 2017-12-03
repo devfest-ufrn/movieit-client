@@ -8,6 +8,9 @@ export default function MovieSessions({ data }) {
   return (
     <div className={ styles.wrapper }>
       <h2 className={ styles.date }>Próximas sessões</h2>
+      { data.length === 0 &&
+        <span>Nenhuma sessão disponível.</span>
+      }
       { data.map((item, i) => {
         return (
           <div key={ i }>

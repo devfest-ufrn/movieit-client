@@ -3,15 +3,15 @@ import _ from 'lodash';
 
 import Movie from 'components/pages/movie';
 
-function parseTheatersSessions(movie, sessions) {
+function parseTheatersSessions(activeDay, movie, sessions) {
+  if(!sessions) { return []; }
+
+  const movieSessions = _.first(_.filter(sessions[movie.ingressoId], { date: activeDay }));
+  if(!movieSessions) { return []; }
+
   let theatersSessions = [];
 
-  if(!sessions) { return theatersSessions; }
-
-  const sessionsGroup = sessions[movie.ingressoId];
-  if(!sessionsGroup) { return; }
-
-  _.each(sessionsGroup.theaters, (theater) => {
+  _.each(movieSessions.theaters, (theater) => {
     let theaterSessions = [];
 
     _.each(theater.rooms, (room) => {
@@ -37,10 +37,10 @@ function parseTheatersSessions(movie, sessions) {
 
 function mapStateToProps(state, ownProps) {
   const movieId = ownProps.match.params.id;
-  const { movies, sessions } = state;
+  const { activeDay, movies, sessions } = state;
 
   const movie = _.find(movies, { id: Number(movieId) });
-  const theatersSessions = parseTheatersSessions(movie, sessions);
+  const theatersSessions = parseTheatersSessions(activeDay, movie, sessions)
 
   return {
     movie,

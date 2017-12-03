@@ -12,8 +12,8 @@ function parseNextSessions(activeDay, movies, sessions) {
   if(!sessions) { return nextSessions; }
   const moviesIds = _.map(movies, movie => movie.ingressoId);
   const filteredSessions = {};
-  _.each(sessions, (resultItem, index) => {
-    filteredSessions[moviesIds[index]] = _.first(_.filter(resultItem, { date: activeDay }));
+  _.each(moviesIds, (movieId) => {
+    filteredSessions[movieId] = _.first(_.filter(sessions[movieId], { date: activeDay }));
   });
 
   _.each(movies, (movie) => {
