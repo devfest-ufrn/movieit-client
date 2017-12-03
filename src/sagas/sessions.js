@@ -7,6 +7,8 @@ import { actions as sessionsActions } from 'ducks/sessions';
 
 const INGRESSO_PARTNERSHIP = process.env.INGRESSO_PARTNERSHIP;
 
+import SESSIONS from 'data/sample-sessions';
+
 export function request(resource, options) {
   return fetch(resource, options)
     .then((response) => response.json())
@@ -18,20 +20,23 @@ const generateURL = (movieId) => {
 };
 
 function* loadSessions() {
-  const movies = yield select(state => state.movies);
-  const moviesIds = _.map(movies, movie => movie.ingressoId);
+  /*
+  ** Load sessions data from sample
+  */
+  // const movies = yield select(state => state.movies);
+  // const moviesIds = _.map(movies, movie => movie.ingressoId);
 
-  const sessionsRequests = _.map(moviesIds, (movieId) => {
-    return call(request, generateURL(movieId));
-  });
-  const moviesSessionsResult = yield sessionsRequests; 
+  // const sessionsRequests = _.map(moviesIds, (movieId) => {
+  //   return call(request, generateURL(movieId));
+  // });
+  // const moviesSessionsResult = yield sessionsRequests; 
 
-  let mapSessionsToMovieId = {};
-  _.each(moviesIds, (moviesId, index) => {
-    mapSessionsToMovieId[moviesId] = moviesSessionsResult[index];
-  })
+  // let mapSessionsToMovieId = {};
+  // _.each(moviesIds, (moviesId, index) => {
+  //   mapSessionsToMovieId[moviesId] = moviesSessionsResult[index];
+  // })
 
-  yield put(sessionsActions.set(mapSessionsToMovieId));
+  yield put(sessionsActions.set(SESSIONS));
 }
 
 export default function* watch() {
