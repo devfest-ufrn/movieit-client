@@ -3,14 +3,14 @@ import React from 'react';
 import styles from './session-block.css';
 
 export default function SessionBlock({
-  siteURL,
-  time,
-  tags
+  data,
+  onClick = () => {}
 }) {
+  const { time, type } = data;
   return (
-    <a href={ siteURL } className={ styles.wrapper }>
+    <button className={ styles.wrapper } onClick={ onClick.bind(this, data) }>
       <span className={ styles.time }>{ time }</span>
-      <span className={ styles.tags }>{ tags.join(' | ') }</span>
-    </a>
+      <span className={ styles.tags }>{ type.join(' | ') }</span>
+    </button>
   );
 }
