@@ -5,6 +5,9 @@
   text-align: center;
   color: white;
   background-color: #2D2D2D;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .time {

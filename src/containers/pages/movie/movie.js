@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
 import { actions as activeDayActions } from 'ducks/active-day';
+import { actions as activeSessionActions } from 'ducks/active-session';
 
 import Movie from 'components/pages/movie';
 
@@ -21,8 +22,12 @@ function parseTheatersSessions(activeDay, movie, sessions) {
       _.each(room.sessions, (session) => {
         const sessionObj = {
           time: session.time,
+          siteURL: session.siteURL,
+          movieId: movie.ingressoId,
+          movieName: movie.title,
+          theater: theater.name,
           type: _.map(session.types, 'alias'),
-          siteURL: session.siteURL
+          posterImage: movie.posterPortrait
         };
 
         theaterSessions.push(sessionObj);
@@ -55,7 +60,8 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addDay: activeDayActions.add,
-    subtractDay: activeDayActions.subtract
+    subtractDay: activeDayActions.subtract,
+    loadActiveSession: activeSessionActions.load
   }, dispatch);
 }
 

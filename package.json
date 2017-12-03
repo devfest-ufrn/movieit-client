@@ -20,11 +20,13 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "dotenv": "^4.0.0",
+    "file-loader": "^1.1.5",
     "lodash": "^4.17.2",
     "moment": "^2.19.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.1.1",
+    "react-modal": "^3.1.6",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",

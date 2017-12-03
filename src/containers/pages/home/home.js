@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
 import { actions as activeDayActions } from 'ducks/active-day';
+import { actions as activeSessionActions } from 'ducks/active-session';
 
 import Home from 'components/pages/home';
 
@@ -58,7 +59,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addDay: activeDayActions.add,
-    subtractDay: activeDayActions.subtract
+    subtractDay: activeDayActions.subtract,
+    loadActiveSession: activeSessionActions.load
   }, dispatch);
 }
 
