@@ -3,14 +3,15 @@ import _ from 'lodash';
 
 import MovieCard from 'components/movie-card';
 
-import MOVIES from 'data/sample-movies';
-
 import styles from './movie-grid.css';
 
 export default class MovieGrid extends React.Component {
   render() {
-    const listWidth = (MOVIES.length * (140 + 15)) - 15;
-    const sortedMovies = _.sortBy(MOVIES, (movie) => {
+    const { data } = this.props;
+    if(!data) { return null; }
+
+    const listWidth = (data.length * (140 + 15)) - 15;
+    const sortedMovies = _.sortBy(data, (movie) => {
       return -movie.ratings[0].value;
     });
 

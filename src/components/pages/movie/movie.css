@@ -52,6 +52,10 @@
   margin-bottom: 10px;
   font-size: 20px;
   text-shadow: 0.5px 0.5px 1px #4c4c4c;
+
+  @media (width < 380px) {
+    font-size: 16px;
+  }
 }
 
 .basicInfo {
@@ -95,4 +99,57 @@
     margin-bottom: 4px;
     font-weight: var(--font-weight-bold);
   }
+}
+
+.arrowBack {
+  position: absolute;
+  top: var(--base-spacing);
+  left: var(--base-spacing);
+  width: 28px;
+  z-index: var(--base-z-index);
+
+  @media (width < 380px) {
+    width: 22px;
+  }
+}
+
+.ratings {
+  position: relative;
+  z-index: var(--base-z-index);
+  margin: 0;
+  padding: 0 var(--base-spacing);
+  list-style: none;
+}
+
+.ratingItem {
+  display: inline-block;
+  margin-right: var(--large-spacing);
+
+  @media (width < 420px) {
+    margin-right: var(--base-spacing);
+  }
+}
+
+.ratingImage,
+.ratingValue {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratingImage {
+  max-width: 40px;
+}
+
+.ratingValue {
+  display: inline-block;
+  margin-left: var(--base-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.metacriticImage {
+  max-width: 24px;
+}
+
+.filmowImage {
+  max-width: 60px;
 }

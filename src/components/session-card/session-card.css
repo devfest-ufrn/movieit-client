@@ -3,8 +3,13 @@
 .wrapper {
   position: relative;
   margin-bottom: var(--base-spacing);
+  color: white;
   background-color: #111;
   overflow: hidden;
+}
+
+.linkWrapper {
+  color: white;
 }
 
 .header {
@@ -33,6 +38,13 @@
   clear: both;
   margin: 0;
   font-size: 12px;
+
+  @media (width < 380px) {
+    max-width: 180px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 
 .tags {

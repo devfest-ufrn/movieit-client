@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -46,6 +47,16 @@ module.exports = {
           },
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'images/[name]-[hash].[ext]'
+          }
+        }
       }
     ]
   },
