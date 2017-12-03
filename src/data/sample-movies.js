@@ -109,7 +109,7 @@ export default [
     ]
   }, {
     id: 7,
-    ingressoId: 20075,
+    ingressoId: 20039,
     imdbId: 'tt4846232',
     title: 'Bom comportamento',
     posterPortrait: 'https://ingresso-a.akamaihd.net/img/cinema/cartaz/20039-cartaz.jpg',
