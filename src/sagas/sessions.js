@@ -26,12 +26,7 @@ function* loadSessions() {
   });
   const moviesSessionsResult = yield moviesRequests; 
 
-  const filteredSessions = {};
-  _.each(moviesSessionsResult, (resultItem, index) => {
-    filteredSessions[moviesIds[index]] = _.first(_.filter(resultItem, { isToday: true }));
-  });
-
-  yield put(sessionsActions.set(filteredSessions));
+  yield put(sessionsActions.set(moviesSessionsResult));
 }
 
 export default function* watch() {
