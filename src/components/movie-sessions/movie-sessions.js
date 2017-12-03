@@ -10,7 +10,8 @@ export default function MovieSessions({
   activeDay,
   addDay,
   subtractDay,
-  data
+  data,
+  loadActiveSession
 }) {
   return (
     <div className={ styles.wrapper }>
@@ -31,9 +32,8 @@ export default function MovieSessions({
                 return (
                   <SessionBlock
                     key={ i }
-                    siteURL={ session.siteURL }
-                    time={ session.time }
-                    tags={ session.type }
+                    data={ session }
+                    onClick={ loadActiveSession.bind(this) }
                   />
                 );
               }) }

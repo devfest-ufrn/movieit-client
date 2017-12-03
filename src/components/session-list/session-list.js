@@ -2,7 +2,7 @@ import React from 'react';
 
 import SessionCard from 'components/session-card';
 
-export default function SessionList({ data }) {
+export default function SessionList({ data, loadActiveSession }) {
   if(data.length === 0) {
     return <span>Nenhuma sessão disponível.</span>
   }
@@ -11,12 +11,8 @@ export default function SessionList({ data }) {
     return (
       <SessionCard
         key={ i }
-        movieTitle={ session.movieName }
-        movieTheater={ session.theater }
-        posterImage={ session.posterImage }
-        tags={ session.type }
-        time={ session.time }
-        siteURL={ session.siteURL }
+        data={ session }
+        loadActiveSession={ loadActiveSession.bind(this) }
       />
     );
   });

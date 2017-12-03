@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import cx from 'classnames';
-import _ from 'lodash';
 
 import MovieSessions from 'components/movie-sessions';
 import Ratings from 'components/ratings';
@@ -15,7 +13,8 @@ export default function Movie({
   addDay,
   subtractDay,
   movie: movieData,
-  theatersSessions
+  theatersSessions,
+  loadActiveSession
 }) {
   return (
     <article className={ styles.wrapper }>
@@ -48,6 +47,7 @@ export default function Movie({
         addDay={ addDay.bind(this) }
         subtractDay={ subtractDay.bind(this) }
         data={ theatersSessions }
+        loadActiveSession={ loadActiveSession.bind(this) }
       />
       <div
         style={ { backgroundImage: `url(${ movieData.posterHorizontal })` } }

@@ -23,7 +23,10 @@ export default class Home extends Component {
             onLeftClick={ this.props.subtractDay.bind(this) }
             onRightClick={ this.props.addDay.bind(this) }
           />
-          <SessionList data={ this.props.nextSessions } />
+          <SessionList
+            data={ this.props.nextSessions }
+            loadActiveSession={ this.props.loadActiveSession.bind(this) }
+          />
         </div>
       </div>
     );
