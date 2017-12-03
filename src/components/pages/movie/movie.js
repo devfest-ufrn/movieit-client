@@ -10,6 +10,9 @@ import leftArrow from './left-arrow.svg';
 import styles from './movie.css';
 
 export default function Movie({
+  activeDay,
+  addDay,
+  subtractDay,
   movie: movieData,
   theatersSessions
 }) {
@@ -58,7 +61,12 @@ export default function Movie({
         <p><b>Diretor</b>{ movieData.director }</p>
         <p><b>Elenco principal</b>{ movieData.cast }</p>
       </div>
-      <MovieSessions data={ theatersSessions } />
+      <MovieSessions
+        activeDay={ activeDay }
+        addDay={ addDay.bind(this) }
+        subtractDay={ subtractDay.bind(this) }
+        data={ theatersSessions }
+      />
       <div
         style={ { backgroundImage: `url(${ movieData.posterHorizontal })` } }
         className={ styles.bgOverlay }

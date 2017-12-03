@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import moment from 'moment';
-import cx from 'classnames';
 
+import DateControl from 'components/date-control';
 import MovieGrid from 'components/movie-grid';
 import SessionList from 'components/session-list';
 
@@ -9,8 +8,6 @@ import styles from './home.css';
 
 export default class Home extends Component {
   render() {
-    const currentDay = moment().format('YYYY-MM-DD');
-
     return (
       <div className={ styles.container }>
         <header>
@@ -21,23 +18,11 @@ export default class Home extends Component {
           <MovieGrid data={ this.props.movies } />
         </div>
         <div>
-          <div className={ styles.controlWrapper }>
-            <h2 className={ styles.subTitle }>Próximas sessões</h2>
-            <div className={ styles.dayControl }>
-              { this.props.activeDay > currentDay &&
-                <button className={ styles.button } onClick={ this.props.subtractDay.bind(this) }>
-                  <i className="material-icons">chevron_left</i>
-                </button>            
-              }
-              <span className={ styles.dayInfo }>
-                <span className={ cx('material-icons', styles.dayIcon) }>date_range</span>
-                <span className={ styles.dayLabel }>{ moment(this.props.activeDay).format('DD/MM') }</span>
-              </span>
-              <button className={ styles.button } onClick={ this.props.addDay.bind(this) }>
-                <i className="material-icons">chevron_right</i>
-              </button>
-            </div>
-          </div>
+          <DateControl
+            activeDay={ this.props.activeDay }
+            onLeftClick={ this.props.subtractDay.bind(this) }
+            onRightClick={ this.props.addDay.bind(this) }
+          />
           <SessionList data={ this.props.nextSessions } />
         </div>
       </div>

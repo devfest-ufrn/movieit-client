@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import _ from 'lodash';
+
+import { actions as activeDayActions } from 'ducks/active-day';
 
 import Movie from 'components/pages/movie';
 
@@ -43,9 +46,17 @@ function mapStateToProps(state, ownProps) {
   const theatersSessions = parseTheatersSessions(activeDay, movie, sessions)
 
   return {
+    activeDay,
     movie,
     theatersSessions
   };
 }
 
-export default connect(mapStateToProps)(Movie);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    addDay: activeDayActions.add,
+    subtractDay: activeDayActions.subtract
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Movie);

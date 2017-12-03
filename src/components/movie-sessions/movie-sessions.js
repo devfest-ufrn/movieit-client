@@ -2,12 +2,23 @@ import React from 'react';
 
 import SessionBlock from 'components/session-block';
 
+import DateControl from 'components/date-control';
+
 import styles from './movie-sessions.css';
 
-export default function MovieSessions({ data }) {
+export default function MovieSessions({
+  activeDay,
+  addDay,
+  subtractDay,
+  data
+}) {
   return (
     <div className={ styles.wrapper }>
-      <h2 className={ styles.date }>Próximas sessões</h2>
+      <DateControl
+        activeDay={ activeDay }
+        onLeftClick={ subtractDay.bind(this) }
+        onRightClick={ addDay.bind(this) }
+      />
       { data.length === 0 &&
         <span>Nenhuma sessão disponível.</span>
       }
