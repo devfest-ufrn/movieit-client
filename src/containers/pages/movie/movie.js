@@ -15,7 +15,7 @@ function parseTheatersSessions(activeDay, movie, sessions) {
   if(!movieSessions) { return []; }
 
   let theatersSessions = [];
-  const currentTime = moment().format('HH:MM');
+  const currentTime = moment().format('HH:mm');
   const currentDay = moment().format('YYYY-MM-DD');
 
   _.each(movieSessions.theaters, (theater) => {

@@ -42,7 +42,7 @@ function parseNextSessions(activeDay, movies, sessions) {
   });
 
   const currentDay = moment().format('YYYY-MM-DD');
-  const currentTime = moment().format('HH:MM');
+  const currentTime = moment().format('HH:mm');
 
   return _(nextSessions)
     .filter((session) => {
